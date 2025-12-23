@@ -73,4 +73,17 @@ right join orders as o
 on c.customer_id = o.customer_id;
 
 
+-- Natural JOIN :   (Bakwas Join  bc not used anywhere)
+-- if we want to join two table having same column name (if no common column present it will show any unexpected output WORK AS CARTESIAN OR CROSS JOIN)
+select c.customer_id ,c.customer_name ,  o.customer_id , o.amount  from  customers as c 
+natural join orders as o;
+
+-- eXample if it dont have any column common
+
+
+alter table customers rename column  cid TO customer_id ;
+
+select * from  customers as c 
+natural join orders as o;
+
 
